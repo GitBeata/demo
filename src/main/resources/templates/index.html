@@ -1,4 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -8,20 +8,19 @@
 
 <!-- Formularz dodawania wiadomości -->
 <form action="/addMessage" method="post">
-    <input type="text" name="content" id="">
+    <input type="text" name="content" id="content">
     <button type="submit">Send</button>
 </form>
 
 <!-- Lista wiadomości z opcją usunięcia -->
 <ul>
     <li th:each="message : ${messages}">
-        <!-- Wyświetlenie treści wiadomości -->
         <span th:text="${message.content}">Message content</span>
 
         <!-- Formularz do usuwania każdej wiadomości -->
         <form action="/deleteMessage" method="post" style="display:inline;">
             <input type="hidden" name="id" th:value="${message.id}" />
-            <button type="submit">Usuń</button>
+            <button type="submit">Delete</button>
         </form>
     </li>
 </ul>

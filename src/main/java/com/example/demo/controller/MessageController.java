@@ -29,12 +29,12 @@ public class MessageController {
         messageService.saveMessage(newMessage);
         return "redirect:/";
     }
-
     @PostMapping("/deleteMessage")
     public String deleteMessage(@RequestParam("id") Long id) {
         messageService.deleteMessageById(id);
         return "redirect:/";
     }
+
 
 
 }
