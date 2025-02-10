@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+
 import com.example.demo.model.Message;
 import com.example.demo.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,19 +10,18 @@ import java.util.List;
 
 @Service
 public class MessageService {
-
     @Autowired
     private MessageRepository messageRepository;
 
     public List<Message> findAllMessages() {
-        return messageRepository.findAll();  // Zwracanie wszystkich wiadomości
+        return messageRepository.findAll();
     }
 
-    public void saveMessage(Message message) {
-        messageRepository.save(message);  // Zapisywanie wiadomości
+    public Message saveMessage(Message message) {
+        return messageRepository.save(message);
     }
 
-    public void deleteMessageById(Long id) {
-        messageRepository.deleteById(id);  // Usuwanie wiadomości po id
+    public void deleteMessage(Long id) {
+        messageRepository.deleteById(id);
     }
 }
