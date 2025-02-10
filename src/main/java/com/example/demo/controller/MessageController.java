@@ -1,13 +1,13 @@
 package com.example.demo.controller;
 
+
 import com.example.demo.model.Message;
 import com.example.demo.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -19,7 +19,7 @@ public class MessageController {
     @GetMapping("/")
     public String showForm(Model model) {
         model.addAttribute("messages", messageService.findAllMessages());
-                return "index";
+        return "index";
     }
 
     @PostMapping("/addMessage")

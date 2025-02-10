@@ -5,9 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
+public interface MessageRepository extends JpaRepository<Message, Long> {
+    void deleteById(Long id);
 
-    public interface MessageRepository extends JpaRepository<Message, Long>{
-
-    // Jpa Repository umożliwia korzystanie z operacji CRUD
-    }
-
+}
