@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
     public interface MessageRepository extends JpaRepository<Message, Long>{
 
-    // Jpa Repository umożliwia korzystanie z CRUD
+    // Jpa Repository umożliwia korzystanie z operacji CRUD
     }
 
