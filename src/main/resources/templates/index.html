@@ -15,6 +15,7 @@
 <!-- Lista wiadomości z opcją usunięcia -->
 <ul>
     <li th:each="message : ${messages}">
+        <!-- Wyświetlenie treści wiadomości -->
         <span th:text="${message.content}">Message content</span>
 
         <!-- Formularz do usuwania każdej wiadomości -->
