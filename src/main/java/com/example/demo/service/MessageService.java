@@ -22,4 +22,10 @@ public class MessageService {
         return messageRepository.save(message);
     }
 
+    //usuwanie
+
+    public void deleteMessageById(Long id) {
+        messageRepository.deleteById(id);
+    }
+
 }
