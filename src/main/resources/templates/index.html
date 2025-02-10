@@ -16,7 +16,6 @@
 <ul>
     <li th:each="message : ${messages}">
         <span th:text="${message.content}">Message content</span>
-
         <!-- Formularz do usuwania każdej wiadomości -->
         <form action="/deleteMessage" method="post" style="display:inline;">
             <input type="hidden" name="id" th:value="${message.id}" />
