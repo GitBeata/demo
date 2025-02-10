@@ -9,23 +9,19 @@ import java.util.List;
 
 @Service
 public class MessageService {
-@Autowired
+
+    @Autowired
     private MessageRepository messageRepository;
-// find i save to standardowe operacje w tym serwisie. Wstrzykujemy message repository
 
     public List<Message> findAllMessages() {
-        return  messageRepository.findAll();
-
-    }
-    //zapis
-    public Message saveMessage(Message message) {
-        return messageRepository.save(message);
+        return messageRepository.findAll();  // Zwracanie wszystkich wiadomości
     }
 
-    //usuwanie
+    public void saveMessage(Message message) {
+        messageRepository.save(message);  // Zapisywanie wiadomości
+    }
 
     public void deleteMessageById(Long id) {
-        messageRepository.deleteById(id);
+        messageRepository.deleteById(id);  // Usuwanie wiadomości po id
     }
-
 }

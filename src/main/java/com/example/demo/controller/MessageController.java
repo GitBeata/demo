@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-
 import com.example.demo.model.Message;
 import com.example.demo.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ public class MessageController {
     @GetMapping("/")
     public String showForm(Model model) {
         model.addAttribute("messages", messageService.findAllMessages());
-        return "index";
+        return "index";  // Ładowanie widoku z wiadomościami
     }
 
     @PostMapping("/addMessage")
@@ -27,14 +26,12 @@ public class MessageController {
         Message newMessage = new Message();
         newMessage.setContent(content);
         messageService.saveMessage(newMessage);
-        return "redirect:/";
+        return "redirect:/";  // Przekierowanie na stronę główną po dodaniu wiadomości
     }
+
     @PostMapping("/deleteMessage")
     public String deleteMessage(@RequestParam("id") Long id) {
-        messageService.deleteMessageById(id);
-        return "redirect:/";
+        messageService.deleteMessageById(id);  // Usuwanie wiadomości przez id
+        return "redirect:/";  // Przekierowanie na stronę główną po usunięciu wiadomości
     }
-
-
-
 }
